@@ -5,7 +5,8 @@ using System.Linq;
 
 namespace DotNetConfig
 {
-    class FileConfig : Config
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+    public class FileConfig : Config
     {
         ConfigDocument document;
 
