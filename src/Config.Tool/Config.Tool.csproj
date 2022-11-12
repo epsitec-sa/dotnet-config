@@ -34,7 +34,7 @@ Other
 </Description>
 
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
+    <TargetFrameworks>net7</TargetFrameworks>
     <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
 
     <AssemblyName>dotnet-config</AssemblyName>
@@ -54,7 +54,7 @@ Other
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
     <PackageReference Include="Mono.Options" Version="6.12.0.148" />
-    <PackageReference Include="ThisAssembly" Version="1.0.9" PrivateAssets="all" />
+    <PackageReference Include="ThisAssembly" Version="1.0.10" PrivateAssets="all" />
     <PackageReference Include="Polyfill.NET" Version="1.0.12" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">

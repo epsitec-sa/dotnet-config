@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7</TargetFramework>
     <AssemblyName>DotNetConfig.Tests</AssemblyName>
     <RootNamespace>DotNetConfig</RootNamespace>
     <NoWarn>CS1685;$(NoWarn)</NoWarn>
@@ -29,9 +29,9 @@
     <PackageReference Include="Traverse" Version="1.0.1" />
     <PackageReference Include="xunit" Version="2.4.*" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.*" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
-    <PackageReference Include="ThisAssembly" Version="1.0.9" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.14" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
+    <PackageReference Include="ThisAssembly" Version="1.0.10" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
