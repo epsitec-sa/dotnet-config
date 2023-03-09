@@ -301,12 +301,14 @@ namespace DotNetConfig
             var builder = new StringBuilder(lineLength - start);
             int? quote = null;
             var escaped = false;
+            // Do not verify escaping if value start with a quote to allow verbatim text rule
+            var verifyEscaping = lineText[current] == '"';
 
             // We are at the starting " char, skip it to begin subsection reading.
             while (current < lineLength)
             {
                 c = lineText[current];
-                if (c == '\\' && !escaped)
+                if (verifyEscaping && c == '\\' && !escaped)
                 {
                     escaped = true;
                     current++;

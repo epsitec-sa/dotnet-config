@@ -14,11 +14,11 @@ namespace DotNetConfig
             return ConfigReader.ParseSection(filePath, lineText, lineNumber);
         }
 
-        public static Line CreateVariable(string? filePath, int lineNumber, TextSpan? section, TextSpan? subsection, string name, string? value)
+        public static Line CreateVariable(string? filePath, int lineNumber, TextSpan? section, TextSpan? subsection, string name, string? value, Func<string, string> textRule)
         {
             var lineText = value == null ?
                 "\t" + name :
-                "\t" + name + " = " + TextRules.SerializeValue(value);
+                "\t" + name + " = " + textRule(value);
 
             return ConfigReader.ParseVariable(filePath, lineText, lineNumber, section, subsection);
         }

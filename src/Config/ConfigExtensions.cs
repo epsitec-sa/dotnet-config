@@ -557,6 +557,63 @@ namespace DotNetConfig
             => Write(config, level, x => x.SetString(section, subsection, variable, value, valueRegex));
 
         /// <summary>
+        /// Sets the value of a variable in the given section as is (do not escape value).
+        /// </summary>
+        /// <param name="config">The configuration to operate on.</param>
+        /// <param name="section">The section containing the variable.</param>
+        /// <param name="variable">The variable to assign.</param>
+        /// <param name="value">Value to assign to the variable.</param>
+        public static Config SetValue(this Config config, string section, string variable, string value)
+            => config.SetValue(section, null, variable, value, null);
+
+        /// <summary>
+        /// Sets the value of a variable in the given section and optional subsection as is (do not escape value).
+        /// </summary>
+        /// <param name="config">The configuration to operate on.</param>
+        /// <param name="section">The section containing the variable.</param>
+        /// <param name="subsection">Optional subsection containing the variable.</param>
+        /// <param name="variable">The variable to assign.</param>
+        /// <param name="value">Value to assign to the variable.</param>
+        public static Config SetValue(this Config config, string section, string? subsection, string variable, string value)
+            => config.SetValue(section, subsection, variable, value, null);
+
+        /// <summary>
+        /// Sets the value of a variable in the given section as is (do not escape value).
+        /// </summary>
+        /// <param name="config">The configuration to operate on.</param>
+        /// <param name="section">The section containing the variable.</param>
+        /// <param name="variable">The variable to assign.</param>
+        /// <param name="value">Value to assign to the variable.</param>
+        /// <param name="level">The configuration level to operate on.</param>
+        public static Config SetValue(this Config config, string section, string variable, string value, ConfigLevel level)
+            => Write(config, level, x => x.SetValue(section, null, variable, value, null));
+
+        /// <summary>
+        /// Sets the value of a variable in the given section and optional subsection as is (do not escape value).
+        /// </summary>
+        /// <param name="config">The configuration to operate on.</param>
+        /// <param name="section">The section containing the variable.</param>
+        /// <param name="subsection">Optional subsection containing the variable.</param>
+        /// <param name="variable">The variable to assign.</param>
+        /// <param name="value">Value to assign to the variable.</param>
+        /// <param name="level">The configuration level to operate on.</param>
+        public static Config SetValue(this Config config, string section, string? subsection, string variable, string value, ConfigLevel level)
+            => Write(config, level, x => x.SetValue(section, subsection, variable, value, null));
+
+        /// <summary>
+        /// Sets the value of a variable in the given section and optional subsection as is (do not escape value).
+        /// </summary>
+        /// <param name="config">The configuration to operate on.</param>
+        /// <param name="section">The section containing the variable.</param>
+        /// <param name="subsection">Optional subsection containing the variable.</param>
+        /// <param name="variable">The variable to assign.</param>
+        /// <param name="value">Value to assign to the variable.</param>
+        /// <param name="valueRegex">Filter returned entries to those where the value matches the given expression.</param>
+        /// <param name="level">The configuration level to operate on.</param>
+        public static Config SetValue(this Config config, string section, string? subsection, string variable, string value, string? valueRegex, ConfigLevel level)
+            => Write(config, level, x => x.SetValue(section, subsection, variable, value, valueRegex));
+
+        /// <summary>
         /// Sets the value of all matching variables in the given section.
         /// </summary>
         /// <param name="config">The configuration to operate on.</param>

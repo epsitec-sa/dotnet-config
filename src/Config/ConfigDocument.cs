@@ -71,7 +71,7 @@ namespace DotNetConfig
                 .Select(ToEntry);
         }
 
-        public ConfigDocument Add(string section, string? subsection, string name, string? value)
+        public ConfigDocument Add(string section, string? subsection, string name, string? value, Func<string, string> textRule)
         {
             var sectionLine = Lines.Where(line => line.Kind == LineKind.Section).FirstOrDefault(SectionEquals(section, subsection));
             var lines = Lines;
@@ -81,7 +81,7 @@ namespace DotNetConfig
                 sectionLine = Line.CreateSection(filePath, Lines.Count, section, subsection);
                 lines = Lines
                     .Add(sectionLine)
-                    .Add(Line.CreateVariable(filePath, Lines.Count, sectionLine.Section, sectionLine.Subsection, name, value));
+                    .Add(Line.CreateVariable(filePath, Lines.Count, sectionLine.Section, sectionLine.Subsection, name, value, textRule));
             }
             else
             {
@@ -90,13 +90,13 @@ namespace DotNetConfig
                 while (++index < Lines.Count && Lines[index].Kind == LineKind.Variable)
                     ;
 
-                lines = lines.Insert(index, Line.CreateVariable(filePath, index, sectionLine.Section, sectionLine.Subsection, name, value));
+                lines = lines.Insert(index, Line.CreateVariable(filePath, index, sectionLine.Section, sectionLine.Subsection, name, value, textRule));
             }
 
             return this with { Lines = lines };
         }
 
-        public ConfigDocument Set(string section, string? subsection, string name, string? value = null, ValueMatcher? valueMatcher = null)
+        public ConfigDocument Set(string section, string? subsection, string name, Func<string, string> textRule, string? value = null, ValueMatcher? valueMatcher = null)
         {
             var variables = Variables
                 .Where(SectionEquals(section, subsection))
@@ -117,7 +117,7 @@ namespace DotNetConfig
             }
             else
             {
-                return Add(section, subsection, name, value);
+                return Add(section, subsection, name, value, textRule);
             }
         }
 
@@ -143,11 +143,11 @@ namespace DotNetConfig
             return this;
         }
 
-        public ConfigDocument SetAll(string section, string? subsection, string name, string? value, ValueMatcher? valueMatcher = null)
+        public ConfigDocument SetAll(string section, string? subsection, string name, string? value, Func<string, string> textRule, ValueMatcher? valueMatcher = null)
         {
             // Forces validation
             var sl = Line.CreateSection(filePath, 0, section, subsection);
-            Line.CreateVariable(filePath, 0, sl.Section, sl.Subsection, name, value);
+            Line.CreateVariable(filePath, 0, sl.Section, sl.Subsection, name, value, textRule);
 
             var matcher = valueMatcher ?? ValueMatcher.All;
             var lines = Lines;
@@ -165,7 +165,7 @@ namespace DotNetConfig
         {
             // Forces validation
             var sl = Line.CreateSection(filePath, 0, section, subsection);
-            Line.CreateVariable(filePath, 0, sl.Section, sl.Subsection, name, null);
+            Line.CreateVariable(filePath, 0, sl.Section, sl.Subsection, name, null, TextRules.Verbatim);
 
             var matcher = valueMatcher ?? ValueMatcher.All;
             var variables = Variables.Where(SectionEquals(section, subsection))

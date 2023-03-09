@@ -63,6 +63,9 @@ namespace DotNetConfig
         public override Config SetString(string section, string? subsection, string variable, string value, string? valueRegex)
             => GetConfig().SetString(section, subsection, variable, value, valueRegex);
 
+        public override Config SetValue(string section, string? subsection, string variable, string value, string? valueRegex)
+            => GetConfig().SetValue(section, subsection, variable, value, valueRegex);
+
         public override bool TryGetBoolean(string section, string? subsection, string variable, out bool value)
         {
             foreach (var config in Files)

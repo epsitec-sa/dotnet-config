@@ -7,7 +7,7 @@ namespace DotNetConfig
     {
         const long KB = 1024;
 
-        public static void ParseKey(string key, out string section, out string? subsection, out string variable)
+        public static void ParseKey(string key, out string section, out string? subsection, out string variable, Func<string, string> textRule)
         {
             var parts = key.Split('.');
             if (parts.Length < 2)
@@ -17,7 +17,7 @@ namespace DotNetConfig
             {
                 // NO SUBS
                 var sl = Line.CreateSection(null, 0, parts[0], null);
-                var vl = Line.CreateVariable(null, 1, sl.Section, null, parts[1], null);
+                var vl = Line.CreateVariable(null, 1, sl.Section, null, parts[1], null, textRule);
                 section = sl.Section!;
                 subsection = null;
                 variable = vl.Variable!;
@@ -25,7 +25,7 @@ namespace DotNetConfig
             else
             {
                 var sl = Line.CreateSection(null, 0, parts[0], string.Join(".", parts[1..^1]).Trim('"'));
-                var vl = Line.CreateVariable(null, 1, sl.Section, null, parts[^1], null);
+                var vl = Line.CreateVariable(null, 1, sl.Section, null, parts[^1], null, textRule);
                 section = sl.Section!;
                 subsection = sl.Subsection;
                 variable = vl.Variable!;
@@ -105,6 +105,8 @@ namespace DotNetConfig
 
         public static string SerializeSubsection(string subsection)
             => subsection.Replace("\\", "\\\\").Replace("\"", "\\\"");
+
+        public static string Verbatim(string value) => value;
 
         public static string SerializeValue(string value)
         {

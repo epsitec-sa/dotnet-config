@@ -22,30 +22,30 @@ namespace DotNetConfig
             {
                 // Shortcut notation.
                 return new FileConfig(FilePath,
-                    document.Add(section, subsection, variable, null)
+                    document.Add(section, subsection, variable, null, TextRules.Verbatim)
                             .Save());
             }
             else
             {
                 return new FileConfig(FilePath,
-                    document.Add(section, subsection, variable, "false")
+                    document.Add(section, subsection, variable, "false", TextRules.Verbatim)
                             .Save());
             }
         }
 
         public override Config AddDateTime(string section, string? subsection, string variable, DateTime value)
             => new FileConfig(FilePath, document
-                .Add(section, subsection, variable, value.ToString("O"))
+                .Add(section, subsection, variable, value.ToString("O"), TextRules.Verbatim)
                 .Save());
 
         public override Config AddNumber(string section, string? subsection, string variable, long value)
             => new FileConfig(FilePath, document
-                .Add(section, subsection, variable, value.ToString())
+                .Add(section, subsection, variable, value.ToString(), TextRules.Verbatim)
                 .Save());
 
         public override Config AddString(string section, string? subsection, string variable, string value)
             => new FileConfig(FilePath, document
-                .Add(section, subsection, variable, value)
+                .Add(section, subsection, variable, value, TextRules.Verbatim)
                 .Save());
 
         public override IEnumerable<ConfigEntry> GetAll(string section, string? subsection, string variable, string? valueRegex)
@@ -85,30 +85,30 @@ namespace DotNetConfig
             {
                 // Shortcut notation.
                 return new FileConfig(FilePath, document
-                    .SetAll(section, subsection, variable, null, valueRegex)
+                    .SetAll(section, subsection, variable, null, TextRules.Verbatim, valueRegex)
                     .Save());
             }
             else
             {
                 return new FileConfig(FilePath, document
-                    .SetAll(section, subsection, variable, "false", valueRegex)
+                    .SetAll(section, subsection, variable, "false", TextRules.Verbatim, valueRegex)
                     .Save());
             }
         }
 
         public override Config SetAllDateTime(string section, string? subsection, string variable, DateTime value, string? valueRegex)
             => new FileConfig(FilePath, document
-                .SetAll(section, subsection, variable, value.ToString("O"), valueRegex)
+                .SetAll(section, subsection, variable, value.ToString("O"), TextRules.Verbatim, valueRegex)
                 .Save());
 
         public override Config SetAllNumber(string section, string? subsection, string variable, long value, string? valueRegex)
             => new FileConfig(FilePath, document
-                .SetAll(section, subsection, variable, value.ToString(), valueRegex)
+                .SetAll(section, subsection, variable, value.ToString(), TextRules.Verbatim, valueRegex)
                 .Save());
 
         public override Config SetAllString(string section, string? subsection, string variable, string value, string? valueRegex)
             => new FileConfig(FilePath, document
-                .SetAll(section, subsection, variable, value, valueRegex)
+                .SetAll(section, subsection, variable, value, TextRules.Verbatim, valueRegex)
                 .Save());
 
         public override Config SetBoolean(string section, string? subsection, string variable, bool value, string? valueRegex)
@@ -117,30 +117,35 @@ namespace DotNetConfig
             {
                 // Shortcut notation.
                 return new FileConfig(FilePath, document
-                    .Set(section, subsection, variable, null, valueRegex)
+                    .Set(section, subsection, variable, TextRules.Verbatim, null, valueRegex)
                     .Save());
             }
             else
             {
                 return new FileConfig(FilePath, document
-                    .Set(section, subsection, variable, "false", valueRegex)
+                    .Set(section, subsection, variable, TextRules.Verbatim, "false", valueRegex)
                     .Save());
             }
         }
 
         public override Config SetDateTime(string section, string? subsection, string variable, DateTime value, string? valueRegex)
             => new FileConfig(FilePath, document
-                .Set(section, subsection, variable, value.ToString("O"), valueRegex)
+                .Set(section, subsection, variable, TextRules.Verbatim, value.ToString("O"), valueRegex)
                 .Save());
 
         public override Config SetNumber(string section, string? subsection, string variable, long value, string? valueRegex)
             => new FileConfig(FilePath, document
-                .Set(section, subsection, variable, value.ToString(), valueRegex)
+                .Set(section, subsection, variable, TextRules.Verbatim, value.ToString(), valueRegex)
                 .Save());
 
         public override Config SetString(string section, string? subsection, string variable, string value, string? valueRegex)
             => new FileConfig(FilePath, document
-                .Set(section, subsection, variable, value, valueRegex)
+                .Set(section, subsection, variable, TextRules.SerializeValue, value, valueRegex)
+                .Save());
+
+        public override Config SetValue(string section, string? subsection, string variable, string value, string? valueRegex)
+            => new FileConfig(FilePath, document
+                .Set(section, subsection, variable, TextRules.Verbatim, value, valueRegex)
                 .Save());
 
         public override bool TryGetBoolean(string section, string? subsection, string variable, out bool value)

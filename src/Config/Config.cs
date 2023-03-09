@@ -276,6 +276,16 @@ namespace DotNetConfig
         public abstract Config SetString(string section, string? subsection, string variable, string value, string? valueRegex);
 
         /// <summary>
+        /// Sets the value of a variable in the given section and optional subsection as is (do not escape the value).
+        /// </summary>
+        /// <param name="section">The section containing the variable.</param>
+        /// <param name="subsection">Optional subsection containing the variable.</param>
+        /// <param name="variable">The variable to assign.</param>
+        /// <param name="value">Value to assign to the variable.</param>
+        /// <param name="valueRegex">Filter returned entries to those where the value matches the given expression.</param>
+        public abstract Config SetValue(string section, string? subsection, string variable, string value, string? valueRegex);
+
+        /// <summary>
         /// Sets the value of all matching variables in the given section and optional subsection.
         /// </summary>
         /// <param name="section">The section containing the variable.</param>
