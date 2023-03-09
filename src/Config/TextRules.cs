@@ -112,13 +112,27 @@ namespace DotNetConfig
 
             // Escaping backslashes is applied first since it does not 
             // require adding quotes to the string.
-            if (value.IndexOf('\\') != -1)
-                value = value.Replace("\\", "\\\\");
+            value = value
+                .Replace("\\", "\\\\")
+                .Replace("\"", "\\\"");
 
-            if (value.IndexOfAny(new[] { '#', ';', '"', '=' }) == -1)
+            if (value.IndexOfAny(new[] { '#', ';', '=' }) == -1)
                 return value;
 
-            return "\"" + value.Trim('"').Replace("\"", "\\\"") + "\"";
+            return Quote(value);
+
+            string Quote(string value)
+            {
+                if (value[0] != '"')
+                {
+                    value = "\"" + value;
+                }
+                if (value.EndsWith("\\\"") || value[^1] != '"')
+                {
+                    value += "\"";
+                }
+                return value;
+            }
         }
 
         public static string ToKey(string section, string? subsection, string variable)
