@@ -1,0 +1,404 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/runner/work/dotnet-config/dotnet-config/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetConfig.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetConfig.Config.html",
+          "hash": "GHFjEI5JDIT1mvp7HqDhjECuE7BZR/LZxQnMTZhddFs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetConfig.ConfigEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetConfig.ConfigEntry.html",
+          "hash": "L8HyL8TBbXNAsD8qwkqABbBPYTgPRH/zBAzt9+hCEtY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetConfig.ConfigExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetConfig.ConfigExtensions.html",
+          "hash": "l/NCLWscLlvFiwe23MD85YkVS1eRxZF6+o+L705pwYI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetConfig.ConfigLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetConfig.ConfigLevel.html",
+          "hash": "EAZ5XYJyKpSjWxrWFA+i4HZ3MSS5ynjbPufxk4USqew="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetConfig.ConfigSection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetConfig.ConfigSection.html",
+          "hash": "jq3yYUeb5hbEGSURP/JJwWdSSaos6tn1d0JabOFvF30="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetConfig.ConfigSectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetConfig.ConfigSectionExtensions.html",
+          "hash": "eCN1vXabCz0tLv7sttDucq8drJTl5SzY7gv+y6E70/o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetConfig.FileConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetConfig.FileConfig.html",
+          "hash": "XXSoqL5fvg+qe32tLvwnRfdiIiI2pUvMd92894cKEZk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetConfig.html",
+          "hash": "+vLgU7WI70kyiyx4fK6ABJNwPpSQLd1nvVSsW+y2MtE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.Configuration.DotNetConfigExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.Configuration.DotNetConfigExtensions.html",
+          "hash": "f1Ef54tTJUXs92L9Wn6WvMIqxIxFg8irhBkwMoa5s8Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.Configuration.html",
+          "hash": "AwXkRYraqYeOCCNDnrrYMxNs4dug7eBqA6SBFZ+ygcw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.CommandLine.CommandLineExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.CommandLine.CommandLineExtensions.html",
+          "hash": "nrzyPYEZDDBAGyLpHXswxvB7cGioIk1tRb7Wvn+wR2Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.CommandLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.CommandLine.html",
+          "hash": "A+k+rgs8wIb/azN8aFPzZjeBc9ndfaK3inXOufHb0RI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "OGWHKLOYVM/kHOtWSbj8uUY+cT4dmgt0UKXE+PbU3Ks="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "qcStOMDq8qkmahuzAYBA5yNi327Elrm/0LxhjpBRepw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "SCiQIvQaOEsO9XdMaMxxnJHvPHJC8I2enZ4nJ+tf6JE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "styles/main.css",
+      "output": {
+        "resource": {
+          "relative_path": "styles/main.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "styles/main.js",
+      "output": {
+        "resource": {
+          "relative_path": "styles/main.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "0du6dtr81uD/DAd3VRLn4apxQYI6MLNiF6LqyIrtm4c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "who/dotnet-eventgrid.md",
+      "output": {
+        ".html": {
+          "relative_path": "who/dotnet-eventgrid.html",
+          "hash": "jzmDStdNQT7Q1IIGkpBnN6qCcEsFmaAuO8xQIioW/A4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "who/dotnet-file.md",
+      "output": {
+        ".html": {
+          "relative_path": "who/dotnet-file.html",
+          "hash": "l81nAzeSANfuN7KMfrE647A7hT5cubLZRbtZBJriajc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "who/dotnet-serve.md",
+      "output": {
+        ".html": {
+          "relative_path": "who/dotnet-serve.html",
+          "hash": "/AkQuEZ/GGFYrcmCCj4V9EEbxCKnIqQI2MpBDXu8hj8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "who/dotnet-vs.md",
+      "output": {
+        ".html": {
+          "relative_path": "who/dotnet-vs.html",
+          "hash": "q6fB0ki/z2Gi34c7zqc6SZ7JxkZGyya2DYxVGNrAP4k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "who/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "who/index.html",
+          "hash": "OhNIVib6SYgIjf7fpQAEM/aqgFHv4Lp4QlbpyRPVTlU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "who/reportgenerator.md",
+      "output": {
+        ".html": {
+          "relative_path": "who/reportgenerator.html",
+          "hash": "KIeXOYldPBfPNwSbQbiejZH4mPnaluJ/xrzNhT+wHWI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "who/sleet.md",
+      "output": {
+        ".html": {
+          "relative_path": "who/sleet.html",
+          "hash": "fGi80+XIUhblm2E/+JVJBgeOXCkEY5DX/No4ry+GnR0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "who/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "who/toc.html",
+          "hash": "jgkjon6Oa3SlmcLpMLoH6dRyJPnYth4NEXapl0rBecg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 9,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 12,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
