@@ -21,6 +21,8 @@ Usage:
     <Deterministic>true</Deterministic>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
+
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
   </PropertyGroup>
 
   <PropertyGroup Label="docfx">
