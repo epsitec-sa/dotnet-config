@@ -92,11 +92,6 @@
     <div class="level1"><a class="xref" href="DotNetConfig.Config.html">Config</a></div>
     <div class="level2"><span class="xref">FileConfig</span></div>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="DotNetConfig.ConfigEntry.html">ConfigEntry</a>&gt;</div>
-    <div><span class="xref">System.Collections.IEnumerable</span></div>
-  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -123,33 +118,12 @@
     <div>
       <a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_GetSection_System_String_System_String_">Config.GetSection(String, String)</a>
     </div>
-    <div>
-      <a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_System_Collections_Generic_IEnumerable_DotNetConfig_ConfigEntry__GetEnumerator">Config.IEnumerable&lt;ConfigEntry&gt;.GetEnumerator()</a>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="DotNetConfig.html">DotNetConfig</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="DotNetConfig_FileConfig_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FileConfig : Config, IEnumerable&lt;ConfigEntry&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public class FileConfig : Config</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -249,7 +223,7 @@
   
   
   <a id="DotNetConfig_FileConfig_AddDateTime_" data-uid="DotNetConfig.FileConfig.AddDateTime*"></a>
-  <h4 id="DotNetConfig_FileConfig_AddDateTime_System_String_System_String_System_String_System_DateTime_" data-uid="DotNetConfig.FileConfig.AddDateTime(System.String,System.String,System.String,System.DateTime)">AddDateTime(String, String, String, DateTime)</h4>
+  <h4 id="DotNetConfig_FileConfig_AddDateTime_System_String_System_String_System_String_DateTime_" data-uid="DotNetConfig.FileConfig.AddDateTime(System.String,System.String,System.String,DateTime)">AddDateTime(String, String, String, DateTime)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -282,7 +256,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="xref">DateTime</span></td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
@@ -304,7 +278,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_AddDateTime_System_String_System_String_System_String_System_DateTime_">Config.AddDateTime(String, String, String, DateTime)</a></div>
+  <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_AddDateTime_System_String_System_String_System_String_DateTime_">Config.AddDateTime(String, String, String, DateTime)</a></div>
   
   
   <a id="DotNetConfig_FileConfig_AddNumber_" data-uid="DotNetConfig.FileConfig.AddNumber*"></a>
@@ -475,7 +449,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="DotNetConfig.ConfigEntry.html">ConfigEntry</a>&gt;</td>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="DotNetConfig.ConfigEntry.html">ConfigEntry</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -502,7 +476,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="DotNetConfig.ConfigEntry.html">ConfigEntry</a>&gt;</td>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="DotNetConfig.ConfigEntry.html">ConfigEntry</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -605,7 +579,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="DotNetConfig.ConfigEntry.html">ConfigEntry</a>&gt;</td>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="DotNetConfig.ConfigEntry.html">ConfigEntry</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -787,7 +761,7 @@
   
   
   <a id="DotNetConfig_FileConfig_SetAllDateTime_" data-uid="DotNetConfig.FileConfig.SetAllDateTime*"></a>
-  <h4 id="DotNetConfig_FileConfig_SetAllDateTime_System_String_System_String_System_String_System_DateTime_System_String_" data-uid="DotNetConfig.FileConfig.SetAllDateTime(System.String,System.String,System.String,System.DateTime,System.String)">SetAllDateTime(String, String, String, DateTime, String)</h4>
+  <h4 id="DotNetConfig_FileConfig_SetAllDateTime_System_String_System_String_System_String_DateTime_System_String_" data-uid="DotNetConfig.FileConfig.SetAllDateTime(System.String,System.String,System.String,DateTime,System.String)">SetAllDateTime(String, String, String, DateTime, String)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -820,7 +794,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="xref">DateTime</span></td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
@@ -847,7 +821,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_SetAllDateTime_System_String_System_String_System_String_System_DateTime_System_String_">Config.SetAllDateTime(String, String, String, DateTime, String)</a></div>
+  <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_SetAllDateTime_System_String_System_String_System_String_DateTime_System_String_">Config.SetAllDateTime(String, String, String, DateTime, String)</a></div>
   
   
   <a id="DotNetConfig_FileConfig_SetAllNumber_" data-uid="DotNetConfig.FileConfig.SetAllNumber*"></a>
@@ -1043,7 +1017,7 @@
   
   
   <a id="DotNetConfig_FileConfig_SetDateTime_" data-uid="DotNetConfig.FileConfig.SetDateTime*"></a>
-  <h4 id="DotNetConfig_FileConfig_SetDateTime_System_String_System_String_System_String_System_DateTime_System_String_" data-uid="DotNetConfig.FileConfig.SetDateTime(System.String,System.String,System.String,System.DateTime,System.String)">SetDateTime(String, String, String, DateTime, String)</h4>
+  <h4 id="DotNetConfig_FileConfig_SetDateTime_System_String_System_String_System_String_DateTime_System_String_" data-uid="DotNetConfig.FileConfig.SetDateTime(System.String,System.String,System.String,DateTime,System.String)">SetDateTime(String, String, String, DateTime, String)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1076,7 +1050,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="xref">DateTime</span></td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
@@ -1103,7 +1077,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_SetDateTime_System_String_System_String_System_String_System_DateTime_System_String_">Config.SetDateTime(String, String, String, DateTime, String)</a></div>
+  <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_SetDateTime_System_String_System_String_System_String_DateTime_System_String_">Config.SetDateTime(String, String, String, DateTime, String)</a></div>
   
   
   <a id="DotNetConfig_FileConfig_SetNumber_" data-uid="DotNetConfig.FileConfig.SetNumber*"></a>
@@ -1257,8 +1231,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.ToString()</span></div>
   
   
   <a id="DotNetConfig_FileConfig_TryGetBoolean_" data-uid="DotNetConfig.FileConfig.TryGetBoolean*"></a>
@@ -1321,7 +1293,7 @@
   
   
   <a id="DotNetConfig_FileConfig_TryGetDateTime_" data-uid="DotNetConfig.FileConfig.TryGetDateTime*"></a>
-  <h4 id="DotNetConfig_FileConfig_TryGetDateTime_System_String_System_String_System_String_System_DateTime__" data-uid="DotNetConfig.FileConfig.TryGetDateTime(System.String,System.String,System.String,System.DateTime@)">TryGetDateTime(String, String, String, out DateTime)</h4>
+  <h4 id="DotNetConfig_FileConfig_TryGetDateTime_System_String_System_String_System_String_DateTime__" data-uid="DotNetConfig.FileConfig.TryGetDateTime(System.String,System.String,System.String,DateTime@)">TryGetDateTime(String, String, String, out DateTime)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1354,7 +1326,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="xref">DateTime</span></td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
@@ -1376,7 +1348,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_TryGetDateTime_System_String_System_String_System_String_System_DateTime__">Config.TryGetDateTime(String, String, String, out DateTime)</a></div>
+  <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_TryGetDateTime_System_String_System_String_System_String_DateTime__">Config.TryGetDateTime(String, String, String, out DateTime)</a></div>
   
   
   <a id="DotNetConfig_FileConfig_TryGetNumber_" data-uid="DotNetConfig.FileConfig.TryGetNumber*"></a>
@@ -1608,13 +1580,6 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="DotNetConfig.Config.html#DotNetConfig_Config_UnsetAll_System_String_System_String_System_String_System_String_">Config.UnsetAll(String, String, String, String)</a></div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
-  </div>
-  <div>
-      <span class="xref">System.Collections.IEnumerable</span>
-  </div>
 </article>
           </div>
           
