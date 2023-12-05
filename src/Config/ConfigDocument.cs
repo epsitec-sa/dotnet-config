@@ -43,7 +43,7 @@ namespace DotNetConfig
         public ConfigDocument Save()
         {
             if (!Directory.Exists(Path.GetDirectoryName(filePath)))
-                Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+                Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
 
             using var writer = new StreamWriter(filePath, false);
 
@@ -187,7 +187,7 @@ namespace DotNetConfig
             // Forces validation
             Line.CreateSection(filePath, 0, section, subsection);
 
-            Line line;
+            Line? line;
             var lines = Lines;
 
             while ((line = lines
@@ -219,7 +219,7 @@ namespace DotNetConfig
             Line.CreateSection(filePath, 0, oldSection, oldSubsection);
             Line.CreateSection(filePath, 0, newSection, newSubsection);
 
-            Line line;
+            Line? line;
             var lines = Lines;
 
             while ((line = lines
@@ -251,7 +251,7 @@ namespace DotNetConfig
             if (!Variables.Where(SectionEquals(section, subsection)).Any())
             {
                 var line = Lines.Where(SectionEquals(section, subsection)).FirstOrDefault();
-                if (line.Kind == LineKind.Section)
+                if (line?.Kind == LineKind.Section)
                 {
                     var index = Lines.IndexOf(line);
                     var lines = Lines.RemoveAt(index);

@@ -66,7 +66,7 @@ namespace DotNetConfig
             if (Path.IsPathRooted(value))
                 return new FileInfo(value).FullName;
 
-            return new FileInfo(Path.Combine(Path.GetDirectoryName(FilePath), value)).FullName;
+            return new FileInfo(Path.Combine(Path.GetDirectoryName(FilePath)!, value)).FullName;
         }
 
         public override Config RemoveSection(string section, string? subsection)
