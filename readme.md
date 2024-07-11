@@ -21,6 +21,7 @@
 <b><a href="#cli">CLI</a></b>
 </p>
 
+<!-- #content -->
 # Why
 
 `dotnet-config` (or `.netconfig`) provides a uniform mechanism for 
@@ -323,11 +324,8 @@ configuration level to use for persisting the value, by passing a `ConfigLevel`:
 //[vs "alias"]
 //	comexp = run|community|exp
 
-config = config.AddString("vs", "alias", "comexp", "run|community|exp", ConfigLevel.Global);
+config.AddString("vs", "alias", "comexp", "run|community|exp", ConfigLevel.Global);
 ```
-
-> IMPORTANT: the Config API is immutable, so if you make changes, you should update your reference
-> to the newly updated Config, otherwise, subsequent changes would override prior ones.
 
 You can explore the entire API in the [docs site](https://dotnetconfig.org/api/).
 
@@ -339,6 +337,7 @@ You can explore the entire API in the [docs site](https://dotnetconfig.org/api/)
 PM> Install-Package DotNetConfig.Configuration
 ```
 
+<!-- #extensions -->
 Usage (in this example, also chaining other providers):
 
 ```csharp
@@ -365,6 +364,8 @@ You can read both values with:
 string port = config["serve:port"];  // == "8080";
 string timeout = config["security:admin:timeout"];  // == "60";
 ```
+
+<!-- #extensions -->
 
 ### System.CommandLine
 
@@ -478,12 +479,18 @@ For numbers, the argument/option can be either `long` or `int`. Keep in mind tha
 
 [![Version](https://img.shields.io/nuget/v/dotnet-config.svg?color=royalblue)](https://www.nuget.org/packages/dotnet-config) [![Downloads](https://img.shields.io/nuget/dt/dotnet-config.svg?color=darkmagenta)](https://www.nuget.org/packages/dotnet-config)
 
+<!-- #cli -->
 The command line tool allows you to inspect and modify configuration files used by your dotnet tools. 
 Installation is the same as for any other dotnet tool: 
 
 ```
 > dotnet tool install -g dotnet-config
 ```
+
+The available options and actions are (for the most part) compatible with the behavior of `git config`.
+
+> When reading and writing from a single file, you can for the most part just use `git config`
+> along with the compatibility option `-f|--file` specifying the file to read/write from.
 
 Reading and writing variables don't require any special options. The following lines first 
 write a variable value and then retrieve its value:
@@ -503,29 +510,31 @@ All current options from running `dotnet config -?` are:
 Usage: dotnet config [options]
 
 Location (uses all locations by default)
-      --local                use .netconfig.user file
       --global               use global config file
       --system               use system config file
+      --local                use .netconfig.user file
+  -f, --file                 use given config file (git config compat)
       --path[=VALUE]         use given config file or directory
 
 Action
       --get                  get value: name [value-regex]
       --get-all              get all values: key [value-regex]
       --get-regexp           get values for regexp: name-regex [value-regex]
-      --set                  set value: name value [value-regex]
-      --set-all              set all matches: name value [value-regex]
       --add                  add a new variable: name value
       --unset                remove a variable: name [value-regex]
       --unset-all            remove all matches: name [value-regex]
-      --remove-section       remove a section: name
+      --set                  set value: name value [value-regex]
+      --set-all              set all matches: name value [value-regex]
       --rename-section       rename section: old-name new-name
+      --remove-section       remove a section: name
   -l, --list                 list all
   -e, --edit                 edit the config file in an editor
 
 Other
-      --default[=VALUE]      with --get, use default value when missing entry
       --name-only            show variable names only
-      --type[=VALUE]         value is given this type, can be 'boolean', 'datetime' or 'number'
+      --default[=VALUE]      with --get, use default value when missing entry
+      --type[=VALUE]         value is given this type, can be 'boolean', '
+                               datetime' or 'number'
   -?, -h, --help             Display this help
 ```
 
@@ -533,3 +542,7 @@ Command line parsing is done with [Mono.Options](https://www.nuget.org/packages/
 all the following variants for arguments are supported: `-flag`, `--flag`, `/flag`, `-flag=value`, 
 `--flag=value`, `/flag=value`, `-flag:value`, `--flag:value`, `/flag:value`, `-flag value`, 
 `--flag value`, `/flag value`.
+
+<!-- #cli -->
+<!-- #content -->
+<!-- include https://github.com/devlooped/sponsors/raw/main/footer.md -->

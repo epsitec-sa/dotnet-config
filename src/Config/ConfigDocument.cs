@@ -38,7 +38,7 @@ namespace DotNetConfig
 
         public ConfigLevel? Level { get; }
 
-        internal ImmutableList<Line> Lines { get; init; } = ImmutableList<Line>.Empty;
+        internal ImmutableList<Line> Lines { get; private set; } = ImmutableList<Line>.Empty;
 
         public ConfigDocument Save()
         {
@@ -93,7 +93,8 @@ namespace DotNetConfig
                 lines = lines.Insert(index, Line.CreateVariable(filePath, index, sectionLine.Section, sectionLine.Subsection, name, value));
             }
 
-            return this with { Lines = lines };
+            Lines = lines;
+            return this;
         }
 
         public ConfigDocument Set(string section, string? subsection, string name, string? value = null, ValueMatcher? valueMatcher = null)
@@ -113,7 +114,8 @@ namespace DotNetConfig
 
             if (variable != null)
             {
-                return this with { Lines = Lines.Replace(variable, variable.WithValue(value)) };
+                Lines = Lines.Replace(variable, variable.WithValue(value));
+                return this;
             }
             else
             {
@@ -137,7 +139,9 @@ namespace DotNetConfig
             var variable = variables.FirstOrDefault();
             if (variable != null)
             {
-                return (this with { Lines = Lines.Remove(variable) }).CleanupSection(section, subsection);
+                Lines = Lines.Remove(variable);
+                CleanupSection(section, subsection);
+                return this;
             }
 
             return this;
@@ -158,7 +162,8 @@ namespace DotNetConfig
                 lines = lines.Replace(variable, variable.WithValue(value));
             }
 
-            return this with { Lines = lines };
+            Lines = lines;
+            return this;
         }
 
         public ConfigDocument UnsetAll(string section, string? subsection, string name, ValueMatcher? valueMatcher = null)
@@ -179,7 +184,9 @@ namespace DotNetConfig
                 lines = lines.Remove(variable);
             }
 
-            return (this with { Lines = lines }).CleanupSection(section, subsection);
+            Lines = lines;
+            CleanupSection(section, subsection);
+            return this;
         }
 
         public ConfigDocument RemoveSection(string section, string? subsection = null)
@@ -210,7 +217,8 @@ namespace DotNetConfig
             while (lines.Count > 0 && lines[^1].Kind == LineKind.None)
                 lines = lines.RemoveAt(lines.Count - 1);
 
-            return this with { Lines = lines };
+            Lines = lines;
+            return this;
         }
 
         public ConfigDocument RenameSection(string oldSection, string? oldSubsection, string newSection, string? newSubsection)
@@ -240,7 +248,8 @@ namespace DotNetConfig
                 }
             }
 
-            return this with { Lines = lines };
+            Lines = lines;
+            return this;
         }
 
         /// <summary>
@@ -260,7 +269,8 @@ namespace DotNetConfig
                     while (index < lines.Count && lines[index].Kind == LineKind.None)
                         lines = lines.RemoveAt(index);
 
-                    return this with { Lines = lines };
+                    Lines = lines;
+                    return this;
                 }
             }
 
