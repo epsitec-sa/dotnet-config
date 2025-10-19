@@ -67,7 +67,7 @@ namespace DotNetConfig
                 else
                     configs = new AggregateConfig(new FileConfig(path + UserExtension, ConfigLevel.Local), new FileConfig(path));
 
-                dir = new DirectoryInfo(Path.GetDirectoryName(path)).Parent;
+                dir = new DirectoryInfo(Path.GetDirectoryName(path)!).Parent;
             }
             else if (Directory.Exists(path) || !Path.HasExtension(path))
             {
@@ -88,7 +88,7 @@ namespace DotNetConfig
                 else
                     configs = new AggregateConfig(new FileConfig(path + UserExtension, ConfigLevel.Local), new FileConfig(path));
 
-                dir = new DirectoryInfo(Path.GetDirectoryName(path)).Parent;
+                dir = new DirectoryInfo(Path.GetDirectoryName(path)!).Parent;
             }
 
             // If the path is not Global or System, we start walking the directory 

@@ -61,7 +61,7 @@ namespace DotNetConfig
             if (reader == null || reader.Peek() == -1)
                 return null;
 
-            var lineText = reader.ReadLine();
+            var lineText = reader.ReadLine()!;
             var lineLength = lineText.Length;
             lineNumber++;
 

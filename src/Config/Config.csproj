@@ -1,41 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>APIs for handling dotnet-config compatible settings for any dotnet tool.
-
-Usage: 
-  var config = Config.Build();
-  var value = config.GetString("section", "subsection", "variable");
-
-  // Setting values
-  config
-    .SetString("section", "subsection", "variable", value)
-    .SetBoolean("section", "subsection", "enabled", true);
-</Description>
-
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>APIs for handling dotnet-config compatible settings for any dotnet tool.</Description>
     <AssemblyName>DotNetConfig</AssemblyName>
     <RootNamespace>DotNetConfig</RootNamespace>
-    <PackageId>DotNetConfig</PackageId>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Deterministic>true</Deterministic>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-  </PropertyGroup>
-
-  <PropertyGroup Label="docfx">
-    <DocfxConfigFile>../../docs/docfx.json</DocfxConfigFile>
-    <MetadataOutputFolder>../..</MetadataOutputFolder>
-    <PreviewOutputFolder>../../docs/_site</PreviewOutputFolder>
-    <LogFile>$(MSBuildProjectExtensionsPath)/obj/docfx.log</LogFile>
-    <LogLevel>Info</LogLevel>
-    <BuildDocFx Condition="'$(BuildDocFx)' == ''">false</BuildDocFx>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NuGetizer" Version="1.3.0" />
-    <PackageReference Include="System.Collections.Immutable" Version="6.0.0" />
-    <PackageReference Include="ThisAssembly" Version="2.0.14" PrivateAssets="all" />
-    <PackageReference Include="Polyfill.NET" Version="1.0.12" PrivateAssets="all" />
+    <PackageReference Include="System.Collections.Immutable" />
   </ItemGroup>
 
 </Project>

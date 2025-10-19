@@ -5,7 +5,8 @@ using System.Linq;
 
 namespace DotNetConfig
 {
-    class FileConfig : Config
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+    public class FileConfig : Config
     {
         ConfigDocument document;
 
@@ -66,7 +67,7 @@ namespace DotNetConfig
             if (Path.IsPathRooted(value))
                 return new FileInfo(value).FullName;
 
-            return new FileInfo(Path.Combine(Path.GetDirectoryName(FilePath), value)).FullName;
+            return new FileInfo(Path.Combine(Path.GetDirectoryName(FilePath)!, value)).FullName;
         }
 
         public override Config RemoveSection(string section, string? subsection)
